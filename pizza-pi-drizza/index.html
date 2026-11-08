@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza Pi Drizza — Семейная пиццерия, рецепты и дорожные истории</title>
+  <meta name="description" content="Pizza Pi Drizza — теплая семейная пиццерия. История дружбы Сергея, Димы и Семёна, рецепты крафтовых пицц, старые автомобили и ароматы далеких дорог.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  
+  <!-- Favicon icon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23cc5428'/%3E%3Cpath d='M50 15 L85 80 L15 80 Z' fill='%23f59e36'/%3E%3Ccircle cx='46' cy='52' r='6' fill='%238b0000'/%3E%3Ccircle cx='58' cy='65' r='5' fill='%238b0000'/%3E%3Ccircle cx='38' cy='68' r='5' fill='%238b0000'/%3E%3Ccircle cx='52' cy='40' r='4' fill='%234a7c2b'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ===================================================================
+       1. Navigation Header
+       =================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand-logo" aria-label="Pizza Pi Drizza Главная">
+        <div class="brand-icon">
+          <!-- Pizza Peel / Flame SVG -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">Pizza <span>Pi Drizza</span></span>
+          <span class="brand-tagline">Печь • Дружба • Истории дорог</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#about" class="nav-link">История Дружбы</a></li>
+          <li><a href="#founders" class="nav-link">Трое у Печи</a></li>
+          <li><a href="#cars" class="nav-link">Гараж & Машины</a></li>
+          <li><a href="#menu" class="nav-link">Рецепты & Меню</a></li>
+          <li><a href="#secrets" class="nav-link">Секреты Теста</a></li>
+          <li><a href="#map" class="nav-link">Карта Дорог</a></li>
+          <li><a href="#guestbook" class="nav-link">Книга Гостей</a></li>
+          <li><a href="#visit" class="nav-link">В Гости</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Открыть меню">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       2. Cozy Atmosphere Fireplace Sound Bar (Fixed Floating Pill)
+       =================================================================== -->
+  <div class="atmosphere-bar" id="atmosphere-bar" title="Включить звук потрескивающей дровяной печи">
+    <button class="audio-toggle-btn" id="audio-toggle-btn">
+      <div class="audio-equalizer">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <span id="audio-status-text">Звук печи (вкл)</span>
+    </button>
+  </div>
+
+  <main>
+    <!-- ===================================================================
+         3. Hero Section
+         =================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-background">
+        <img src="images/hero-bg.jpg" alt="Дровяная печь Pizza Pi Drizza с живым огнем" width="1600" height="900">
+      </div>
+      <div class="hero-gradient-overlay"></div>
+      <canvas id="hero-canvas" class="hero-canvas"></canvas>
+
+      <div class="container hero-content">
+        <div class="hero-badge-row">
+          <div class="hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Семейная дровяная пиццерия
+          </div>
+          <div class="hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            72 часа ферментации Biga
+          </div>
+          <div class="hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path>
+              <circle cx="7" cy="17" r="2"></circle>
+              <path d="M9 17h6"></path>
+              <circle cx="17" cy="17" r="2"></circle>
+            </svg>
+            5 стран и 5 ретро-автомобилей
+          </div>
+        </div>
+
+        <h1 class="hero-title">
+          Пицца, рождённая в дороге,<br>
+          замешанная на <em>настоящей дружбе.</em>
+        </h1>
+
+        <p class="hero-lead">
+          Мы — <strong>Сергей, Дима и Семён</strong>. Семь лет назад мы загрузили в багажник старого красного универсала мешок итальянской муки, походную чугунную сковороду и отправились в путь. Мы ломались на перевалах, пекли пиццу на речных камнях и находили редчайшие рецепты, которыми теперь делимся с вами.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#menu" class="btn btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+            Смотреть Меню & Рецепты
+          </a>
+          <a href="#about" class="btn btn-secondary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="10 8 16 12 10 16 10 8"></polygon>
+            </svg>
+            Читать Нашу Историю
+          </a>
+          <a href="#secrets" class="btn btn-secondary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+              <line x1="8" y1="6" x2="16" y2="6"></line>
+              <line x1="16" y1="14" x2="16" y2="18"></line>
+              <path d="M16 10h.01"></path>
+              <path d="M12 10h.01"></path>
+              <path d="M8 10h.01"></path>
+              <path d="M12 14h.01"></path>
+              <path d="M8 14h.01"></path>
+              <path d="M12 18h.01"></path>
+              <path d="M8 18h.01"></path>
+            </svg>
+            Калькулятор Теста
+          </a>
+        </div>
+
+        <div class="hero-stats-strip">
+          <div class="hero-stat-item">
+            <span class="hero-stat-number">482 000</span>
+            <span class="hero-stat-label">Километров дорог на старых машинах</span>
+          </div>
+          <div class="hero-stat-item">
+            <span class="hero-stat-number">72 ч</span>
+            <span class="hero-stat-label">Холодной ферментации на живой закваске</span>
+          </div>
+          <div class="hero-stat-item">
+            <span class="hero-stat-number">450 °C</span>
+            <span class="hero-stat-label">Жар дубовых и буковых поленьев</span>
+          </div>
+          <div class="hero-stat-item">
+            <span class="hero-stat-number">3 друга</span>
+            <span class="hero-stat-label">И сотни счастливых семейных ужинов</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         4. The Origin & Story Section ("Трое в машине, не считая муки")
+         =================================================================== -->
+    <section class="story-section" id="about">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">История создания</span>
+          <h2 class="section-title">Как родилась <span>Pizza Pi Drizza</span></h2>
+          <p class="section-subtitle">
+            История о том, как лопнувший патрубок радиатора в Тоскане, мешок муки и итальянская бабушка навсегда изменили судьбу трех друзей.
+          </p>
+        </div>
+
+        <div class="story-intro-grid">
+          <div class="story-intro-text">
+            <p>
+              Осенью 2017 года трое закадычных друзей — автомеханик Сергей, повар-самоучка Дима и музыкант-столяр Семён — скинулись по 130 долларов и купили потрепанный жизнью красный универсал Volvo 240 1984 года. В багажнике лежали спальники, набор гаечных ключей и мечта увидеть настоящую родину пиццы.
+            </p>
+            <p class="lead-quote">
+              «Машина закипела посреди холмов Сан-Джиминьяно. Пар валил из-под капота как из паровоза. В этот момент из каменного дома вышла синьора Роза с деревянной ложкой в руках…»
+            </p>
+            <p>
+              Увидев трех промокших парней, пытающихся разобрать термостат прямо на обочине, синьора Роза всплеснула руками и с громогласным смехом воскликнула: <em>«Mamma mia, che pi drizza!»</em> — что на местном шутливом наречии означало «Ну что за нелепая, но прекрасная кутерьма!».
+            </p>
+            <p>
+              Она пустила нас в свой дом, напоила домашним вином и показала свою гордость — помпейскую дровяную печь, которой было больше ста лет. Именно там Сергей впервые прикоснулся к 60-летней закваске, Дима влюбился в томаты Сан-Марцано, а Семён поклялся, что построит такую же печь своими руками. Так родилась <strong>Pizza Pi Drizza</strong> — пиццерия, в которой живет дух дорожных приключений.
+            </p>
+          </div>
+
+          <!-- Polaroid Photo Stack -->
+          <div class="polaroid-stack">
+            <div class="polaroid-card polaroid-1">
+              <div class="polaroid-tape"></div>
+              <img src="images/friends-trio.jpg" alt="Сергей, Дима и Семён на обочине у старой машины">
+              <div class="polaroid-caption">Тоскана, 2017. Радиатор остывает, мы мечтаем.</div>
+            </div>
+            <div class="polaroid-card polaroid-2">
+              <div class="polaroid-tape"></div>
+              <img src="images/car-roadtrip.jpg" alt="Дорога сквозь горы и ретро-автомобиль">
+              <div class="polaroid-caption">В поисках дикого тимьяна и дровяных печей</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             5. The Trio Profile Cards (Identical Proportions)
+             =================================================================== -->
+        <div id="founders">
+          <div class="text-center" style="margin-top: 4rem;">
+            <span class="section-tag">Трое основателей</span>
+            <h3 class="section-title">Кто стоит за <span>каждым кусочком</span></h3>
+            <p class="section-subtitle">
+              У каждого из нас свой характер, своя любимая машина и своя священная роль на кухне.
+            </p>
+          </div>
+
+          <div class="founders-grid">
+            <!-- Сергей -->
+            <div class="founder-card">
+              <div class="founder-image-wrap">
+                <img src="images/sergey.jpg" alt="Сергей — Мастер Теста и Механики" width="600" height="900">
+                <span class="founder-badge-role">Тесто & Механика</span>
+              </div>
+              <div class="founder-content">
+                <h4 class="founder-name">Сергей</h4>
+                <div class="founder-nickname">«Карбюратор»</div>
+                <p class="founder-bio">
+                  Бывший инженер и автомеханик. Для Серёги тесто — это сложнейший механизм, который нужно чувствовать пальцами. Он может настроить карбюратор старого Volvo по звуку выхлопа, а влажность теста определяет с точностью до грамма, просто прикоснувшись к опаре.
+                </p>
+                <div class="founder-quote-box">
+                  «Тесто живое. Если мотор дышит воздухом и бензином, то опара дышит временем и покоем. 72 часа холодной ферментации — и никакой спешки.»
+                </div>
+                <div class="founder-skills">
+                  <span class="skill-tag">Закваска Lievito Madre</span>
+                  <span class="skill-tag">Biga 100%</span>
+                  <span class="skill-tag">Volvo 240 Master</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Дима -->
+            <div class="founder-card">
+              <div class="founder-image-wrap">
+                <img src="images/dima.jpg" alt="Дима — Алхимик Вкусов и Травник" width="600" height="900">
+                <span class="founder-badge-role">Вкусы & Ингредиенты</span>
+              </div>
+              <div class="founder-content">
+                <h4 class="founder-name">Дима</h4>
+                <div class="founder-nickname">«Компас»</div>
+                <p class="founder-bio">
+                  Неугомонный шеф и ботаник-путешественник. Всегда сидит за рулем с мятым бумажным атласом дорог. Способен свернуть с автобана на 150 километров в сторону, если узнает, что в горной деревушке фермер делает редкий копченый сыр или собирает горный шафран.
+                </p>
+                <div class="founder-quote-box">
+                  «Мы никогда не используем соусы из банок. Томаты должны пахнуть вулканической землей, а орегано надо срывать на рассвете в горах.»
+                </div>
+                <div class="founder-skills">
+                  <span class="skill-tag">Охота за фермерскими сырами</span>
+                  <span class="skill-tag">Травы Прованса</span>
+                  <span class="skill-tag">Штурман экспедиций</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Семён (Same 600x900 proportions) -->
+            <div class="founder-card">
+              <div class="founder-image-wrap">
+                <img src="images/semyon.jpg" alt="Семён — Хранитель Огня и Музыкант" width="600" height="900">
+                <span class="founder-badge-role">Огонь & Душа Дома</span>
+              </div>
+              <div class="founder-content">
+                <h4 class="founder-name">Семён</h4>
+                <div class="founder-nickname">«Искра»</div>
+                <p class="founder-bio">
+                  Мастер по дереву, музыкант и хранитель дровяной печи. Сложил нашу помпейскую печь из огнеупорного шамота своими руками. Знает по имени всех постоянных гостей, играет на гитаре по вечерам у открытого огня и выбирает только сухостойный бук и дуб.
+                </p>
+                <div class="founder-quote-box">
+                  «Печь не прощает фальши. Огонь должен гореть ровно на 450 градусов, а в зале всегда должен звенеть смех друзей и звучать струны.»
+                </div>
+                <div class="founder-skills">
+                  <span class="skill-tag">Жар 450°C</span>
+                  <span class="skill-tag">Помпейская печь</span>
+                  <span class="skill-tag">Акустическая гитара</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         6. The Fleet & Expeditions Section ("Гараж и Вкусы Дорог")
+         =================================================================== -->
+    <section class="expeditions-section" id="cars">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">Автопарк & Экспедиции</span>
+          <h2 class="section-title">Машины, которые <span>придумали пиццу</span></h2>
+          <p class="section-subtitle">
+            Каждая наша фирменная пицца обязана своим рецептом поломке одной из этих легендарных машин в самых неожиданных уголках мира.
+          </p>
+        </div>
+
+        <!-- Car Switcher Tabs -->
+        <div class="cars-carousel-nav">
+          <button class="car-nav-tab active" data-car="volvo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            Volvo 240 (Тоскана)
+          </button>
+          <button class="car-nav-tab" data-car="vw-bus">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            VW T2 Camper (Греция)
+          </button>
+          <button class="car-nav-tab" data-car="mercedes">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            Mercedes W124 (Кавказ)
+          </button>
+          <button class="car-nav-tab" data-car="niva">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            Нива 2121 (Тайга & Алтай)
+          </button>
+          <button class="car-nav-tab" data-car="citroen">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            Citroën DS (Прованс)
+          </button>
+        </div>
+
+        <!-- Car 1: Volvo 240 -->
+        <div class="car-display-card active" id="car-card-volvo">
+          <div class="car-visual">
+            <img src="images/car-volvo.jpg" alt="Красный универсал Volvo 240 в Тоскане">
+            <div class="car-country-badge">🇮🇹 Италия, Тосканские холмы</div>
+            <div class="car-specs-overlay">
+              <div class="car-spec-item">
+                <span class="spec-title">Год выпуска</span>
+                <span class="spec-val">1984</span>
+              </div>
+              <div class="car-spec-item">
+                <span class="spec-title">Пробег</span>
+                <span class="spec-val">482 000 км</span>
+              </div>
+              <div class="car-spec-item">
+                <span class="spec-title">Двигатель</span>
+                <span class="spec-val">B230 Redblock</span>
+              </div>
+            </div>
+          </div>
+          <div class="car-details-panel">
+            <div>
+              <span class="car-badge-expedition">Экспедиция I • Тоскана & Неаполь</span>
+              <h3 class="car-model-name">Volvo 240 GL Wagon</h3>
+              <div class="car-road-alias">Позывной: «Красный Кирпич»</div>
+              <p class="car-story-paragraph">
+                Наш первый боевой конь. Вместительный, прямоугольный и неубиваемый шведский универсал. Когда под Сан-Джиминьяно лопнул нижний патрубок радиатора, мы провели два незабываемых дня в каменном доме синьоры Розы. Именно в багажнике «Кирпича» мы привезли нашу первую закваску и 50 кг отборной муки Caputo из Неаполя.
+              </p>
+
+              <div class="trunk-inventory-box">
+                <div class="trunk-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                  Что лежало в багажнике:
+                </div>
+                <ul class="trunk-list">
+                  <li>Мешок муки Caputo Tipo 00</li>
+                  <li>Колодезный трос и ключи на 13</li>
+                  <li>Ящик томатов Сан-Марцано</li>
+                  <li>Сливочная фермерская страчателла</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="car-pizza-link-card">
+              <div class="pizza-link-text">
+                <span class="pizza-link-label">Вдохновил на рецепт:</span>
+                <span class="pizza-link-name">Пицца «Тосканский Кирпич»</span>
+              </div>
+              <button class="btn btn-primary" onclick="openRecipeModal('tuscan')">Смотреть рецепт</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Car 2: VW T2 Camper -->
+        <div class="car-display-card" id="car-card-vw-bus">
+          <div class="car-visual">
+            <img src="images/car-vw-bus.jpg" alt="Желтый фургон VW T2 Westfalia на побережье Греции">
+            <div class="car-country-badge">🇬🇷 Греция, Пелопоннес</div>
+            <div class="car-specs-overlay">
+              <div class="car-spec-item">
+                <span class="spec-title">Год выпуска</span>
+                <span class="spec-val">1978</span>
+              </div>
+              <div class="car-spec-item">
+                <span class="spec-title">Пробег</span>
+                <span class="spec-val">340 000 км</span>
+              </div>
+              <div class="car-spec-item">
+                <span class="spec-title">Двигатель</span>
+                <span class="spec-val">1.6L оппозит</span>
+              </div>
+            </div>
+          </div>
+          <div class="car-details-panel">
+            <div>
+              <span class="car-badge-expedition">Экспедиция II • Ионическое море & Пелопоннес</span>
+              <h3 class="car-model-name">Volkswagen T2 Westfalia</h3>
+              <div class="car-road-alias">Позывной: «Лимончелло»</div>
+              <p class="car-story-paragraph">
+                Солнечный дом на колесах с подъемной парусиновой крышей. На крутом горном серпантине над Коринфским заливом у нас порвался ремень генератора. Местный оливковод Никос помог отбуксировать нас к своему дому, а в обмен на запасной ремень от Серёги отдал нам пятилитровый бидон свежайшего оливкового масла, бочковую овечью фету и дикий тимьян.
+              </p>
+
+              <div class="trunk-inventory-box">
+                <div class="trunk-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                  Что лежало в багажнике:
+                </div>
+                <ul class="trunk-list">
+                  <li>Бидон масла Каламата холодного отжима</li>
+                  <li>Овечья бочковая фета</li>
+                  <li>Акустическая гитара Семёна</li>
+                  <li>Печеный перец Флорина</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="car-pizza-link-card">
+              <div class="pizza-link-text">
+                <span class="pizza-link-label">Вдохновил на рецепт:</span>
+                <span class="pizza-link-name">Пицца «Одиссея Т2»</span>
+              </div>
+              <button class="btn btn-primary" onclick="openRecipeModal('greece')">Смотреть рецепт</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Car 3: Mercedes W124 Estate -->
+        <div class="car-display-card" id="car-card-mercedes">
+          <div class="car-visual">
+            <img src="images/car-mercedes.jpg" alt="Mercedes W124 универсал на горном серпантине Кавказа">
+            <div class="car-country-badge">🇬🇪 Кавказ, Крестовый перевал</div>
+            <div class="car-specs-overlay">
+              <div class="car-spec-item">
+                <span class="spec-title">Год выпуска</span>
+                <span class="spec-val">1991</span>
+              </div>
+              <div class="car-spec-item">
+                <span class="spec-title">Пробег</span>
+                <span class="spec-val">615 000 км</span>
+              </div>
+              <div class="car-spec-item">
+                <span class="spec-title">Двигатель</span>
+                <span class="spec-val">3.0L дизель OM603</span>
+              </div>
+            </div>
+          </div>
+          <div class="car-details-panel">
+            <div>
+              <span class="car-badge-expedition">Экспедиция III • Военно-Грузинская Дорога</span>
+              <h3 class="car-model-name">Mercedes-Benz W124 300TD</h3>
+              <div class="car-road-alias">Позывной: «Седой Барон»</div>
+              <p class="car-story-paragraph">
+                Монументальный дизельный крейсер, проглатывающий любые перевалы. На высоте 2379 метров нас застала ночная метель. Машина не подвела: дизель тихо шептал всю ночь, согревая салон, а Семён развел костер из сухих буковых поленьев и испёк на чугуне лепешки с копченым сулугуни, грецким орехом и острой абхазской аджикой.
+              </p>
+
+              <div class="trunk-inventory-box">
+                <div class="trunk-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                  Что лежало в багажнике:
+                </div>
+                <ul class="trunk-list">
+                  <li>Буковые поленья для дровяной печи</li>
+                  <li>Копченый сулугуни в рассоле</li>
+                  <li>Грецкие орехи и соус наршараб</li>
+                  <li>Чугунная походная сковорода</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="car-pizza-link-card">
+              <div class="pizza-link-text">
+                <span class="pizza-link-label">Вдохновил на рецепт:</span>
+                <span class="pizza-link-name">Пицца «Кавказский Дрифт»</span>
+              </div>
+              <button class="btn btn-primary" onclick="openRecipeModal('caucasus')">Смотреть рецепт</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Car 4: Lada Niva 4x4 -->
+        <div class="car-display-card" id="car-card-niva">
+          <div class="car-visual">
+            <img src="images/car-niva.jpg" alt="ВАЗ-2121 Нива в таежном лесу">
+            <div class="car-country-badge">🌲 Сибирь & Горный Алтай</div>
+            <div class="car-specs-overlay">
+              <div class="car-spec-item">
+                <span class="spec-title">Год выпуска</span>
+                <span class="spec-val">1988</span>
+              </div>
+              <div class="car-spec-item">
+                <span class="spec-title">Пробег</span>
+                <span class="spec-val">198 000 км</span>
+              </div>
+              <div class="car-spec-item">
+                <span class="spec-title">Привод</span>
+                <span class="spec-val">4x4 + пониженная</span>
+              </div>
+            </div>
+          </div>
+          <div class="car-details-panel">
+            <div>
+              <span class="car-badge-expedition">Экспедиция IV • Таёжные дебри реки Катунь</span>
+              <h3 class="car-model-name">ВАЗ-2121 «Нива»</h3>
+              <div class="car-road-alias">Позывной: «Таёжная Стрела»</div>
+              <p class="car-story-paragraph">
+                Короткобазный внедорожник, которому нипочем колеи и торфяные броды. Когда мы застряли на реке Катунь и четыре часа тянули лебедку за вековую лиственницу, вокруг открылись поляны золотых лисичек и белых грибов. Вечером у костра с кедровыми шишками родилась самая сытная северная пицца.
+              </p>
+
+              <div class="trunk-inventory-box">
+                <div class="trunk-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                  Что лежало в багажнике:
+                </div>
+                <ul class="trunk-list">
+                  <li>Корзины свежих лисичек и белых грибов</li>
+                  <li>Копченый бекон из таежной дичи</li>
+                  <li>Жареные кедровые орешки</li>
+                  <li>Ручная лебедка и кованый топор</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="car-pizza-link-card">
+              <div class="pizza-link-text">
+                <span class="pizza-link-label">Вдохновил на рецепт:</span>
+                <span class="pizza-link-name">Пицца «Таёжный Заповедник»</span>
+              </div>
+              <button class="btn btn-primary" onclick="openRecipeModal('taiga')">Смотреть рецепт</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Car 5: Citroën DS -->
+        <div class="car-display-card" id="car-card-citroen">
+          <div class="car-visual">
+            <img src="images/car-citroen.jpg" alt="Винтажный Citroen DS среди лавандовых полей Прованса">
+            <div class="car-country-badge">🇫🇷 Франция, Прованс</div>
+            <div class="car-specs-overlay">
+              <div class="car-spec-item">
+                <span class="spec-title">Год выпуска</span>
+                <span class="spec-val">1972</span>
+              </div>
+              <div class="car-spec-item">
+                <span class="spec-title">Пробег</span>
+                <span class="spec-val">275 000 км</span>
+              </div>
+              <div class="car-spec-item">
+                <span class="spec-title">Подвеска</span>
+                <span class="spec-val">Hydropneumatique</span>
+              </div>
+            </div>
+          </div>
+          <div class="car-details-panel">
+            <div>
+              <span class="car-badge-expedition">Экспедиция V • Лаванда плато Валансоль</span>
+              <h3 class="car-model-name">Citroën DS 21 Pallas</h3>
+              <div class="car-road-alias">Позывной: «Французская Акула»</div>
+              <p class="car-story-paragraph">
+                Легендарная французская «Богиня» с космическим дизайном. Когда на плато Валансоль потекла зеленая гидрожидкость LHM и машина плавно опустилась брюхом в цветущую лаванду, нас приютил пасечник Жан-Поль. За три дня ремонта мы узнали всё о козьем сыре шевр, инжире и лавандовом меде.
+              </p>
+
+              <div class="trunk-inventory-box">
+                <div class="trunk-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                  Что лежало в багажнике:
+                </div>
+                <ul class="trunk-list">
+                  <li>Молодой козий сыр шевр</li>
+                  <li>Домашний конфитюр из черного инжира</li>
+                  <li>Банка лавандового золотого меда</li>
+                  <li>Прошутто 18 месяцев выдержки</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="car-pizza-link-card">
+              <div class="pizza-link-text">
+                <span class="pizza-link-label">Вдохновил на рецепт:</span>
+                <span class="pizza-link-name">Пицца «Прованский Бриз»</span>
+              </div>
+              <button class="btn btn-primary" onclick="openRecipeModal('provence')">Смотреть рецепт</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         7. Interactive Recipe Book & Menu Section
+         =================================================================== -->
+    <section class="menu-section" id="menu">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">Книга Рецептов & Меню</span>
+          <h2 class="section-title">Пиццы, в которых <span>живут истории</span></h2>
+          <p class="section-subtitle">
+            Мы делимся каждым секретом: открывайте подробные пошаговые рецепты и выпекайте эти шедевры на любой кухне!
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="menu-filter-bar">
+          <button class="filter-btn active" data-category="all">Все пиццы (8)</button>
+          <button class="filter-btn" data-category="legendary">Дорожные Легенды</button>
+          <button class="filter-btn" data-category="meat">Мясные & Пряные</button>
+          <button class="filter-btn" data-category="cheese">Сырные</button>
+          <button class="filter-btn" data-category="veggie">Классика Неаполя</button>
+        </div>
+
+        <!-- Pizzas Grid -->
+        <div class="menu-grid" id="pizzas-container">
+          
+          <!-- Pizza 1: Tuscan Brick -->
+          <div class="pizza-card" data-category="legendary">
+            <div class="pizza-card-media">
+              <img src="images/pizza-tuscan.jpg" alt="Пицца Тосканский Кирпич" width="800" height="500">
+              <div class="pizza-tag-country">🇮🇹 Тоскана</div>
+              <div class="pizza-tag-car">Volvo 240</div>
+            </div>
+            <div class="pizza-card-body">
+              <div class="pizza-card-header">
+                <h3 class="pizza-title">Тосканский Кирпич</h3>
+                <span class="pizza-price">790 ₽</span>
+              </div>
+              <div class="pizza-flavor-note">«Когда закипел радиатор под кипарисами»</div>
+              <p class="pizza-ingredients-preview">
+                Сливовидные томаты San Marzano, шелковистая сливочная страчателла, чесночный конфи, хлопья морской соли и свежий зеленый базилик.
+              </p>
+              <div class="pizza-meta-row">
+                <span class="meta-item">⏱ 90 сек в печи</span>
+                <span class="meta-item">🌾 68% Biga 72ч</span>
+              </div>
+              <div class="pizza-card-actions">
+                <button class="btn btn-primary" onclick="openRecipeModal('tuscan')">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                  Открыть пошаговый рецепт
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pizza 2: Greece T2 -->
+          <div class="pizza-card" data-category="legendary">
+            <div class="pizza-card-media">
+              <img src="images/pizza-greece.jpg" alt="Пицца Одиссея Т2" width="800" height="500">
+              <div class="pizza-tag-country">🇬🇷 Греция</div>
+              <div class="pizza-tag-car">VW T2 Bus</div>
+            </div>
+            <div class="pizza-card-body">
+              <div class="pizza-card-header">
+                <h3 class="pizza-title">Одиссея Т2</h3>
+                <span class="pizza-price">840 ₽</span>
+              </div>
+              <div class="pizza-flavor-note">«Обмен ремня генератора на бочонок оливок»</div>
+              <p class="pizza-ingredients-preview">
+                Греческая бочковая фета, оливки Каламата, запеченный на углях сладкий перец, дикий горный орегано, каперсы и свежая цедра лимона.
+              </p>
+              <div class="pizza-meta-row">
+                <span class="meta-item">⏱ 100 сек в печи</span>
+                <span class="meta-item">🫒 Масло Kalamata</span>
+              </div>
+              <div class="pizza-card-actions">
+                <button class="btn btn-primary" onclick="openRecipeModal('greece')">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                  Открыть пошаговый рецепт
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pizza 3: Caucasus Drift -->
+          <div class="pizza-card" data-category="meat">
+            <div class="pizza-card-media">
+              <img src="images/pizza-caucasus.jpg" alt="Пицца Кавказский Дрифт" width="800" height="500">
+              <div class="pizza-tag-country">🇬🇪 Кавказ</div>
+              <div class="pizza-tag-car">Mercedes W124</div>
+            </div>
+            <div class="pizza-card-body">
+              <div class="pizza-card-header">
+                <h3 class="pizza-title">Кавказский Дрифт</h3>
+                <span class="pizza-price">890 ₽</span>
+              </div>
+              <div class="pizza-flavor-note">«Ночь в метели на Крестовом перевале»</div>
+              <p class="pizza-ingredients-preview">
+                Копченый сулугуни, нежнейшая томленая говядина, песто из грецких орехов и кинзы (баже), капли острой абхазской аджики и наршараб.
+              </p>
+              <div class="pizza-meta-row">
+                <span class="meta-item">⏱ 90 сек в печи</span>
+                <span class="meta-item">🥩 Томленая говядина</span>
+              </div>
+              <div class="pizza-card-actions">
+                <button class="btn btn-primary" onclick="openRecipeModal('caucasus')">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                  Открыть пошаговый рецепт
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pizza 4: Taiga Wildwoods -->
+          <div class="pizza-card" data-category="meat">
+            <div class="pizza-card-media">
+              <img src="images/pizza-taiga.jpg" alt="Пицца Таёжный Заповедник" width="800" height="500">
+              <div class="pizza-tag-country">🌲 Алтай</div>
+              <div class="pizza-tag-car">Нива 4х4</div>
+            </div>
+            <div class="pizza-card-body">
+              <div class="pizza-card-header">
+                <h3 class="pizza-title">Таёжный Заповедник</h3>
+                <span class="pizza-price">920 ₽</span>
+              </div>
+              <div class="pizza-flavor-note">«Грибная поляна после 4 часов лебедки»</div>
+              <p class="pizza-ingredients-preview">
+                Сливочно-чесночный соус, лесные лисички и белые грибы, копченый бекон из дичи, жареные кедровые орешки, ягоды брусники и тимьян.
+              </p>
+              <div class="pizza-meta-row">
+                <span class="meta-item">⏱ 110 сек в печи</span>
+                <span class="meta-item">🍄 Белые и лисички</span>
+              </div>
+              <div class="pizza-card-actions">
+                <button class="btn btn-primary" onclick="openRecipeModal('taiga')">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                  Открыть пошаговый рецепт
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pizza 5: Provence Breeze -->
+          <div class="pizza-card" data-category="cheese">
+            <div class="pizza-card-media">
+              <img src="images/pizza-provence.jpg" alt="Пицца Прованский Бриз" width="800" height="500">
+              <div class="pizza-tag-country">🇫🇷 Прованс</div>
+              <div class="pizza-tag-car">Citroën DS</div>
+            </div>
+            <div class="pizza-card-body">
+              <div class="pizza-card-header">
+                <h3 class="pizza-title">Прованский Бриз</h3>
+                <span class="pizza-price">870 ₽</span>
+              </div>
+              <div class="pizza-flavor-note">«Гидравлика легла в лавандовое поле»</div>
+              <p class="pizza-ingredients-preview">
+                Конфитюр из спелого инжира, козий шевр, горгонзола дольче, тончайшие ленты прошутто ди Парма, дикая рукола и капли лавандового меда.
+              </p>
+              <div class="pizza-meta-row">
+                <span class="meta-item">⏱ 90 сек в печи</span>
+                <span class="meta-item">🍯 Лавандовый мед</span>
+              </div>
+              <div class="pizza-card-actions">
+                <button class="btn btn-primary" onclick="openRecipeModal('provence')">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                  Открыть пошаговый рецепт
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pizza 6: Margherita DOP -->
+          <div class="pizza-card" data-category="veggie">
+            <div class="pizza-card-media">
+              <img src="images/pizza-margherita.jpg" alt="Пицца Золотая Маргарита" width="800" height="500">
+              <div class="pizza-tag-country">🇮🇹 Неаполь</div>
+              <div class="pizza-tag-car">Школа Розы</div>
+            </div>
+            <div class="pizza-card-body">
+              <div class="pizza-card-header">
+                <h3 class="pizza-title">Золотая Маргарита</h3>
+                <span class="pizza-price">650 ₽</span>
+              </div>
+              <div class="pizza-flavor-note">«Вечный эталон синьоры Розы»</div>
+              <p class="pizza-ingredients-preview">
+                Вулканические томаты San Marzano D.O.P., буйволиная Mozzarella di Bufala Campana, тертый Pecorino Romano, базилик и оливковое масло EVOO.
+              </p>
+              <div class="pizza-meta-row">
+                <span class="meta-item">⏱ 80 сек в печи</span>
+                <span class="meta-item">🧀 Буйволиный сыр</span>
+              </div>
+              <div class="pizza-card-actions">
+                <button class="btn btn-primary" onclick="openRecipeModal('margherita')">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                  Открыть пошаговый рецепт
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pizza 7: Diavola & Nduja -->
+          <div class="pizza-card" data-category="meat">
+            <div class="pizza-card-media">
+              <img src="images/pizza-diavola.jpg" alt="Пицца Везувий в Огне" width="800" height="500">
+              <div class="pizza-tag-country">🇮🇹 Калабрия</div>
+              <div class="pizza-tag-car">Юг Италии</div>
+            </div>
+            <div class="pizza-card-body">
+              <div class="pizza-card-header">
+                <h3 class="pizza-title">Везувий в Огне</h3>
+                <span class="pizza-price">780 ₽</span>
+              </div>
+              <div class="pizza-flavor-note">«Калабрийский темперамент и чили-мед»</div>
+              <p class="pizza-ingredients-preview">
+                Острая пастообразная 'Nduja di Spilinga, хрустящие чашечки артизанальной пепперони, томаты, fior di latte и согревающий чили-мед.
+              </p>
+              <div class="pizza-meta-row">
+                <span class="meta-item">⏱ 90 сек в печи</span>
+                <span class="meta-item">🌶 Острая 'Nduja</span>
+              </div>
+              <div class="pizza-card-actions">
+                <button class="btn btn-primary" onclick="openRecipeModal('diavola')">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                  Открыть пошаговый рецепт
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pizza 8: Six Cheeses -->
+          <div class="pizza-card" data-category="cheese">
+            <div class="pizza-card-media">
+              <img src="images/pizza-four-cheeses.jpg" alt="Пицца Шесть Сыров Дороги" width="800" height="500">
+              <div class="pizza-tag-country">🏔 Альпы</div>
+              <div class="pizza-tag-car">Mercedes W124</div>
+            </div>
+            <div class="pizza-card-body">
+              <div class="pizza-card-header">
+                <h3 class="pizza-title">Шесть Сыров Дороги</h3>
+                <span class="pizza-price">850 ₽</span>
+              </div>
+              <div class="pizza-flavor-note">«Альпийские перевалы и спелая груша»</div>
+              <p class="pizza-ingredients-preview">
+                Таледжо, острая горгонзола, копченая скаморца, пармезан 24 месяца, fior di latte, слайсы спелой груши и жареная фисташка.
+              </p>
+              <div class="pizza-meta-row">
+                <span class="meta-item">⏱ 100 сек в печи</span>
+                <span class="meta-item">🧀 6 редких сыров</span>
+              </div>
+              <div class="pizza-card-actions">
+                <button class="btn btn-primary" onclick="openRecipeModal('four-cheeses')">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                  Открыть пошаговый рецепт
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         8. Interactive Dough Calculator & Pizza Secrets Section
+         =================================================================== -->
+    <section class="secrets-section" id="secrets">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">Калькулятор & Секреты Мастеров</span>
+          <h2 class="section-title">Секрет идеальной <span>пиццы Pi Drizza</span></h2>
+          <p class="section-subtitle">
+            Калькулятор теста от Сергея и главные законы нашей кухни: как повторить неаполитанский шедевр на любой кухне.
+          </p>
+        </div>
+
+        <div class="secrets-grid">
+          <!-- Interactive Dough Calculator Card -->
+          <div class="dough-calc-card">
+            <div class="calc-header">
+              <h3 class="calc-title">Калькулятор Теста Сергея</h3>
+              <p class="calc-subtitle">Выберите, сколько пицц вы хотите испечь — система мгновенно рассчитает точные граммовки по формуле 68% гидратации.</p>
+            </div>
+
+            <div class="calc-control-group">
+              <div class="calc-label">
+                <span>Количество пицц (порций):</span>
+                <span id="calc-count-text">Стандартные шарики по 260 г</span>
+              </div>
+              <div class="calc-counter">
+                <button class="calc-btn" id="calc-minus" aria-label="Уменьшить">-</button>
+                <span class="calc-qty" id="calc-count-val">4</span>
+                <button class="calc-btn" id="calc-plus" aria-label="Увеличить">+</button>
+              </div>
+            </div>
+
+            <div class="calc-results-table">
+              <div class="calc-result-row">
+                <span class="calc-res-label">Мука пшеничная (Tipo 00, белок 12.5-13%):</span>
+                <span class="calc-res-val" id="res-flour">620 г</span>
+              </div>
+              <div class="calc-result-row">
+                <span class="calc-res-label">Вода родниковая ледяная (68% гидратация):</span>
+                <span class="calc-res-val" id="res-water">420 мл</span>
+              </div>
+              <div class="calc-result-row">
+                <span class="calc-res-label">Сухие дрожжи (или живая закваска Biga):</span>
+                <span class="calc-res-val" id="res-yeast">4.8 г (или 140 г Biga)</span>
+              </div>
+              <div class="calc-result-row">
+                <span class="calc-res-label">Морская сицилийская соль (2.8%):</span>
+                <span class="calc-res-val" id="res-salt">17.2 г</span>
+              </div>
+              <div class="calc-result-row">
+                <span class="calc-res-label">Оливковое масло первого холодного отжима:</span>
+                <span class="calc-res-val" id="res-oil">20 мл</span>
+              </div>
+              <div class="calc-result-row" style="padding-top: 0.8rem; border-top: 2px solid rgba(245, 158, 54, 0.3);">
+                <span class="calc-res-label" style="font-weight: 700; color: var(--color-cream);">Общий вес замеса:</span>
+                <span class="calc-res-val" id="res-total" style="color: var(--color-amber);">1077 г (4 шарика по ~260 г)</span>
+              </div>
+            </div>
+
+            <div class="calc-timings">
+              <strong>График созревания:</strong><br>
+              1. Замес 15 минут &rarr; Отдых при комнатной температуре 2 часа.<br>
+              2. Формовка шариков &rarr; 48-72 часа в холодильнике при +4°C.<br>
+              3. Согревание перед выпечкой: 2 часа при комнатной температуре.
+            </div>
+          </div>
+
+          <!-- Four Pillars of Pizza Pi Drizza -->
+          <div class="secrets-pillars">
+            <div class="pillar-item">
+              <div class="pillar-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              </div>
+              <div>
+                <h4 class="pillar-title">1. Ферментация Biga 72 часа</h4>
+                <p class="pillar-desc">
+                  Никакой тяжести в желудке. За трое суток ферменты расщепляют сложные сахара и глютен, делая бортики воздушными, хрустящими и легкоусвояемыми.
+                </p>
+              </div>
+            </div>
+
+            <div class="pillar-item">
+              <div class="pillar-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8M8 12h8"></path></svg>
+              </div>
+              <div>
+                <h4 class="pillar-title">2. Томаты San Marzano D.O.P.</h4>
+                <p class="pillar-desc">
+                  Мы разминаем консервированные томаты с подножия Везувия исключительно руками с добавлением морской соли. Никаких блендеров, чтобы не разбить косточки.
+                </p>
+              </div>
+            </div>
+
+            <div class="pillar-item">
+              <div class="pillar-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+              </div>
+              <div>
+                <h4 class="pillar-title">3. Жар печи 450°C за 90 секунд</h4>
+                <p class="pillar-desc">
+                  Сухие буковые и дубовые дрова создают сухой взрывной жар. Влага мгновенно вскипает, образуя знаменитые «леопардовые пятна» на воздушной корочке.
+                </p>
+              </div>
+            </div>
+
+            <div class="pillar-item">
+              <div class="pillar-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <div>
+                <h4 class="pillar-title">4. Маленькие фермы вместо заводов</h4>
+                <p class="pillar-desc">
+                  Все сыры, бекон и травы мы привозим от конкретных фермеров, с которыми подружились во время автопутешествий. За каждым продуктом стоит живой человек.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         9. Interactive Route Map Section
+         =================================================================== -->
+    <section class="map-section" id="map">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">Маршрут открытий</span>
+          <h2 class="section-title">Карта наших <span>вкусовых экспедиций</span></h2>
+          <p class="section-subtitle">
+            Нажимайте на точки маршрута, чтобы узнать, в какой точке сломалась машина и какой ингредиент мы там нашли.
+          </p>
+        </div>
+
+        <div class="map-wrapper">
+          <div class="map-svg-container">
+            <!-- Stylized Illustrated Map Route -->
+            <svg class="map-route-svg" viewBox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="routeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f59e36" stop-opacity="0.8"/>
+                  <stop offset="50%" stop-color="#cc5428" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#e26736" stop-opacity="0.8"/>
+                </linearGradient>
+                <filter id="glowPin" x="-50%" y="-50%" width="200%" height="200%">
+                  <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#f59e36" flood-opacity="0.8"/>
+                </filter>
+              </defs>
+
+              <!-- Stylized Background Land Contours -->
+              <path d="M 60,120 Q 180,60 300,100 T 520,140 T 700,90 T 940,140 L 960,420 Q 750,440 540,410 T 260,430 T 40,360 Z" fill="#2b2018" stroke="#483628" stroke-width="2"/>
+              <path d="M 120,180 Q 240,150 360,190 T 580,210 T 780,180 T 900,220" fill="none" stroke="#3d2c20" stroke-width="3" stroke-dasharray="6,6"/>
+
+              <!-- Mountain ranges & landscape accents -->
+              <path d="M 220,160 L 240,130 L 260,160 L 280,135 L 300,160" fill="none" stroke="#543c2c" stroke-width="2"/>
+              <path d="M 640,180 L 665,140 L 690,180 L 715,150 L 740,180" fill="none" stroke="#543c2c" stroke-width="2"/>
+              <path d="M 820,150 L 845,115 L 870,150 L 895,125 L 920,150" fill="none" stroke="#543c2c" stroke-width="2"/>
+
+              <!-- Connected Route Line -->
+              <path d="M 180,240 C 260,200 340,320 440,290 C 540,260 620,160 720,200 C 800,230 860,150 900,130" 
+                    fill="none" stroke="url(#routeGrad)" stroke-width="4" stroke-dasharray="8,6" stroke-linecap="round"/>
+
+              <!-- Pin 1: Provence (Citroen DS) -->
+              <g class="map-pin" onclick="selectMapStop('provence')">
+                <circle cx="180" cy="240" r="16" fill="rgba(245, 158, 54, 0.25)" class="pulse"/>
+                <circle id="pin-provence" class="map-pin-circle" cx="180" cy="240" r="8" fill="#f59e36" stroke="#211913" stroke-width="2.5" filter="url(#glowPin)"/>
+                <text x="180" y="270" text-anchor="middle" fill="#ded2bf" font-size="12" font-family="'Plus Jakarta Sans', sans-serif">1. Прованс (Citroën)</text>
+              </g>
+
+              <!-- Pin 2: Tuscany (Volvo 240) -->
+              <g class="map-pin" onclick="selectMapStop('tuscany')">
+                <circle cx="340" cy="305" r="16" fill="rgba(245, 158, 54, 0.25)"/>
+                <circle id="pin-tuscany" class="map-pin-circle" cx="340" cy="305" r="11" fill="#e26736" stroke="#211913" stroke-width="2.5" filter="url(#glowPin)"/>
+                <text x="340" y="335" text-anchor="middle" fill="#fab959" font-weight="700" font-size="13" font-family="'Plus Jakarta Sans', sans-serif">2. Тоскана (Volvo 240)</text>
+              </g>
+
+              <!-- Pin 3: Greece (VW T2) -->
+              <g class="map-pin" onclick="selectMapStop('greece')">
+                <circle cx="490" cy="350" r="16" fill="rgba(245, 158, 54, 0.25)"/>
+                <circle id="pin-greece" class="map-pin-circle" cx="490" cy="350" r="8" fill="#f59e36" stroke="#211913" stroke-width="2.5" filter="url(#glowPin)"/>
+                <text x="490" y="380" text-anchor="middle" fill="#ded2bf" font-size="12" font-family="'Plus Jakarta Sans', sans-serif">3. Греция (VW T2)</text>
+              </g>
+
+              <!-- Pin 4: Caucasus (Mercedes W124) -->
+              <g class="map-pin" onclick="selectMapStop('caucasus')">
+                <circle cx="680" cy="210" r="16" fill="rgba(245, 158, 54, 0.25)"/>
+                <circle id="pin-caucasus" class="map-pin-circle" cx="680" cy="210" r="8" fill="#f59e36" stroke="#211913" stroke-width="2.5" filter="url(#glowPin)"/>
+                <text x="680" y="240" text-anchor="middle" fill="#ded2bf" font-size="12" font-family="'Plus Jakarta Sans', sans-serif">4. Кавказ (W124)</text>
+              </g>
+
+              <!-- Pin 5: Taiga (Lada Niva) -->
+              <g class="map-pin" onclick="selectMapStop('taiga')">
+                <circle cx="890" cy="140" r="16" fill="rgba(245, 158, 54, 0.25)"/>
+                <circle id="pin-taiga" class="map-pin-circle" cx="890" cy="140" r="8" fill="#f59e36" stroke="#211913" stroke-width="2.5" filter="url(#glowPin)"/>
+                <text x="890" y="170" text-anchor="middle" fill="#ded2bf" font-size="12" font-family="'Plus Jakarta Sans', sans-serif">5. Алтай (Нива 4х4)</text>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Active Map Waypoint Card -->
+          <div class="map-info-popup" id="map-popup">
+            <div>
+              <span class="popup-tag" id="map-popup-tag">Volvo 240 Wagon (1984)</span>
+              <h4 class="popup-heading" id="map-popup-title">Сан-Джиминьяно, Италия</h4>
+              <p class="popup-text" id="map-popup-desc">
+                Остановка из-за лопнувшего шланга радиатора. Встреча с синьорой Розой и ее 60-летней закваской. Рождение «Тосканского Кирпича».
+              </p>
+            </div>
+            <button class="btn btn-primary" id="map-popup-btn" onclick="openRecipeModal('tuscan')">Открыть рецепт</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         10. Atmospheric Guestbook Section (Distinct Guest Avatars)
+         =================================================================== -->
+    <section class="guestbook-section" id="guestbook">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">Стена Памяти & Гостевая Книга</span>
+          <h2 class="section-title">Слова тех, кто <span>делил с нами огонь</span></h2>
+          <p class="section-subtitle">
+            Записки наших гостей, случайных путников и друзей, которые заглянули на запах дровяной печи.
+          </p>
+        </div>
+
+        <!-- Polaroid Review Cards Container (Rendered by JS with guest-1, guest-2, guest-3) -->
+        <div class="guestbook-grid" id="guestbook-cards-container">
+          <!-- Populated by JavaScript -->
+        </div>
+
+        <!-- Add Review Form -->
+        <div class="review-form-box">
+          <div class="text-center" style="margin-bottom: 1.5rem;">
+            <h3 class="font-serif" style="font-size: 1.45rem; color: var(--color-cream);">Оставьте свою записку на стене</h3>
+            <p style="font-size: 0.88rem; color: var(--color-cream-muted);">Поделитесь вашей историей или впечатлениями от нашей пиццы</p>
+          </div>
+          <form id="review-form">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label" for="review-author">Ваше имя:</label>
+                <input type="text" id="review-author" class="form-input" placeholder="Например: Артём и Мария" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="review-city">Ваш город или авто:</label>
+                <input type="text" id="review-city" class="form-input" placeholder="Например: Казань / Saab 900">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="review-text">Ваши теплые слова / история:</label>
+              <textarea id="review-text" class="form-textarea" rows="3" placeholder="Расскажите, какую пиццу вы попробовали или какую дорожную историю вспомнили..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Прикрепить записку к стене</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         11. Visit & Pizzeria Atmosphere Section ("Приезжайте в гости")
+         =================================================================== -->
+    <section class="visit-section" id="visit">
+      <div class="container">
+        <div class="visit-grid">
+          <div class="visit-info-card">
+            <span class="section-tag">Ждем вас у очага</span>
+            <h2 class="section-title" style="margin-bottom: 1.5rem;">Приезжайте в гости к <span>Pizza Pi Drizza</span></h2>
+            <p style="color: var(--color-cream-muted); margin-bottom: 2rem;">
+              У нас нет пафоса ресторанных сетей. У нас трещат настоящие буковые поленья в печи, играет винил, на стенах висят старые номерные знаки и дорожные карты, а чай и кофе варятся на живом огне. Приходите с семьей, друзьями и четвероногими попутчиками!
+            </p>
+
+            <div class="visit-detail-row">
+              <div class="visit-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div class="visit-text-block">
+                <h4>Наш адрес</h4>
+                <p>Уютная набережная, старый кирпичный амбар у воды<br>Парковка для ретро-автомобилей и велосипедов прямо у печи</p>
+              </div>
+            </div>
+
+            <div class="visit-detail-row">
+              <div class="visit-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <div class="visit-text-block">
+                <h4>Часы работы</h4>
+                <p>Вторник — Воскресенье: с 12:00 до 23:00 (или до последнего шарика теста)<br>Понедельник: день замеса опары и ремонта машин</p>
+              </div>
+            </div>
+
+            <!-- Contacts without phone icon and without phone number -->
+            <div class="visit-detail-row" style="margin-bottom: 2rem;">
+              <div class="visit-text-block" style="padding-left: 0.25rem;">
+                <h4 style="margin-bottom: 0.35rem;">Просто связаться с нами:</h4>
+                <p style="font-size: 1.05rem; font-weight: 600; color: var(--color-amber);">Семён у телефона, Дима на кухне, Сергей у печи</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+              <a href="#menu" class="btn btn-primary">Смотреть все рецепты и меню &rarr;</a>
+            </div>
+          </div>
+
+          <div class="visit-visual-stack">
+            <img src="images/pizzeria-interior.jpg" alt="Уютный интерьер семейной пиццерии Pizza Pi Drizza" width="800" height="600">
+            <div class="visit-visual-badge">
+              <strong>Теплый ламповый вечер</strong>
+              <span>Живой огонь, виниловые пластинки и запах свежей выпечки</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================================
+       12. Footer
+       =================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="#" class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="brand-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-title">Pizza <span>Pi Drizza</span></span>
+              <span class="brand-tagline">Семейная пиццерия</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            Рождена из дружбы Сергея, Димы и Семёна на обочине тосканских дорог в 2017 году. Делимся рецептами, держим жар в 450 градусов и любим старые автомобили.
+          </p>
+          <div class="footer-quote">
+            «Лучшая приправа к пицце — хорошая дорога и верный друг рядом.»
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Навигация</h5>
+          <ul class="footer-links">
+            <li><a href="#about">История Синьоры Розы</a></li>
+            <li><a href="#founders">Сергей, Дима и Семён</a></li>
+            <li><a href="#cars">Гараж и Ретро-машины</a></li>
+            <li><a href="#menu">Меню и Рецепты</a></li>
+            <li><a href="#secrets">Секреты Теста Сергея</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Пиццы-Легенды</h5>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="openRecipeModal('tuscan')">Тосканский Кирпич</a></li>
+            <li><a href="javascript:void(0)" onclick="openRecipeModal('greece')">Одиссея Т2 (Греция)</a></li>
+            <li><a href="javascript:void(0)" onclick="openRecipeModal('caucasus')">Кавказский Дрифт</a></li>
+            <li><a href="javascript:void(0)" onclick="openRecipeModal('taiga')">Таёжный Заповедник</a></li>
+            <li><a href="javascript:void(0)" onclick="openRecipeModal('provence')">Прованский Бриз</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>В Гости</h5>
+          <ul class="footer-links">
+            <li><span style="color: var(--color-amber);">Связь:</span> Семён у телефона, Дима на кухне, Сергей у печи</li>
+            <li><span style="color: var(--color-amber);">Адрес:</span> Старый Кирпичный Амбар у Воды</li>
+            <li><span style="color: var(--color-amber);">Время:</span> Вт-Вс 12:00 - 23:00</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2017—2026 <strong>Pizza Pi Drizza</strong>. Сделано с любовью к тесту, огню и верным друзьям.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#hero" style="color: var(--color-amber);">Наверх &uarr;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       13. Interactive Recipe Modal (Detailed Step-by-Step + Print View)
+       =================================================================== -->
+  <div class="modal-backdrop" id="recipe-modal" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeRecipeModal()" aria-label="Закрыть рецепт">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="modal-hero">
+        <img id="modal-img" src="images/pizza-tuscan.jpg" alt="Пицца">
+        <div class="modal-hero-overlay"></div>
+        <div class="modal-hero-title-box">
+          <h2 class="modal-pizza-name" id="modal-title">Тосканский Кирпич</h2>
+          <div class="modal-pizza-story-short" id="modal-short">«Когда закипел радиатор под кипарисами»</div>
+        </div>
+      </div>
+
+      <div class="modal-body-content">
+        <!-- Story block -->
+        <div style="margin-bottom: 2rem;">
+          <h4 class="recipe-section-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            История появления рецепта
+          </h4>
+          <p id="modal-story" style="color: var(--color-cream-muted); font-size: 0.98rem; line-height: 1.6;"></p>
+        </div>
+
+        <!-- Recipe Grid (Ingredients + Steps) -->
+        <div class="modal-recipe-grid">
+          <!-- Left: Ingredients -->
+          <div class="recipe-ingredients-pane">
+            <h4 class="recipe-section-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              Ингредиенты (на 1 пиццу)
+            </h4>
+            <ul class="recipe-ingredients-list" id="modal-ingredients-list">
+              <!-- Dynamically populated -->
+            </ul>
+
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dashed rgba(255,255,255,0.1); font-size: 0.82rem; color: var(--color-cream-muted);">
+              <div>⏱ <strong>Выпечка:</strong> <span id="modal-time">90 сек при 450°C</span></div>
+              <div style="margin-top: 0.3rem;">🌾 <strong>Гидратация:</strong> <span id="modal-hydration">68% Biga</span></div>
+              <div style="margin-top: 0.3rem;">🚗 <strong>Автомобиль:</strong> <span id="modal-car" style="color: var(--color-amber);">Volvo 240</span></div>
+            </div>
+          </div>
+
+          <!-- Right: Steps -->
+          <div>
+            <h4 class="recipe-section-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              Пошаговый процесс приготовления
+            </h4>
+            <div class="step-list" id="modal-steps-list">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Pro Tip Callout -->
+        <div class="pro-tip-box">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-amber); flex-shrink: 0;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          <div>
+            <strong>Совет от наших мастеров:</strong>
+            <span id="modal-protip" style="font-size: 0.92rem; color: var(--color-cream);"></span>
+          </div>
+        </div>
+
+        <!-- Modal Footer Actions -->
+        <div class="modal-footer-actions">
+          <button class="btn btn-secondary" onclick="closeRecipeModal()">
+            Закрыть
+          </button>
+          <button class="btn btn-primary" onclick="window.print()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+            Распечатать рецепт (PDF)
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS Logic -->
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+/* ===================================================================
+   Pizza Pi Drizza — Print Stylesheet for Recipes
+   =================================================================== */
+
+@media print {
+  body {
+    background: #fff !important;
+    color: #111 !important;
+    font-size: 12pt;
+    font-family: Georgia, serif;
+  }
+
+  body::before,
+  .site-header,
+  .site-footer,
+  .atmosphere-bar,
+  .hero-section,
+  .story-section,
+  .expeditions-section,
+  .menu-section,
+  .secrets-section,
+  .map-section,
+  .guestbook-section,
+  .visit-section,
+  .modal-close-btn,
+  .modal-footer-actions {
+    display: none !important;
+  }
+
+  .modal-backdrop {
+    position: static !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .modal-container {
+    box-shadow: none !important;
+    border: none !important;
+    max-height: none !important;
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .modal-hero {
+    height: 180px !important;
+  }
+
+  .modal-hero img {
+    filter: grayscale(100%);
+  }
+
+  .modal-pizza-name {
+    color: #000 !important;
+    font-size: 24pt !important;
+  }
+
+  .recipe-ingredients-pane {
+    background: #f8f8f8 !important;
+    border: 1px solid #ccc !important;
+    color: #000 !important;
+  }
+
+  .step-num {
+    background: #333 !important;
+    color: #fff !important;
+  }
+
+  .step-text h5 {
+    color: #000 !important;
+  }
+
+  .step-text p {
+    color: #333 !important;
+  }
+
+  .pro-tip-box {
+    border: 1px solid #aaa !important;
+    background: #fafafa !important;
+    color: #222 !important;
+  }
+}
